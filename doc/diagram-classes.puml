@@ -13,15 +13,16 @@ package game{
 
     }
     Class Armies{
+        -Armies squadA
+        -Armies squadB
 
         +Armies()
         +ArrayList<Character> createArmie()
-        +void getArmies()
+        +void fight()
     }
 
     Class Turns{
-        -Armies squadA
-        -Armies squadB
+        
 
         +startTurns()
 
@@ -46,13 +47,12 @@ package game{
             #int armor
             #String name
             #int healthPoint
-            #int position
 
 
             +int getArmor()
             +String getName()
-            +int getHealthPoint
-            +int getPosition
+            +int getHealthPoint()
+            +void getHealthPoint()
 
         }
 
@@ -94,7 +94,7 @@ Turns --> Armies
 
 Armies *-- Characters
 
-Characters .up.> Attack
+Characters .up.> AttackCalculator
 
 Characters <|-- Elves
 Characters <|-- Hobbits
