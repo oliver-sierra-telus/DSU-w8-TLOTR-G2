@@ -8,7 +8,6 @@ package game{
         -Turns turns
 
         +LOTRGame()
-        +void createArmies()
         +void execute()
 
     }

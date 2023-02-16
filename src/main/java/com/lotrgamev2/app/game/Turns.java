@@ -11,6 +11,12 @@ public class Turns {
             armies.fight();
         }
 
+        if(armies.getSquadA().size() > 0){
+            System.out.println("El equipo 1 gano");
+        }else{
+            System.out.println("El equipo 2 gano");
+        }
+
 
     }
 }

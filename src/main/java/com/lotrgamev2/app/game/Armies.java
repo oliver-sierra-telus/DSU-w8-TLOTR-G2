@@ -16,6 +16,12 @@ public class Armies {
 
     public void fight(){
         
+
+
+
+
+
+        
     }
 
     public ArrayList<Characters> getSquadA() {
