@@ -1,0 +1,108 @@
+@startuml LOTRGame
+
+
+
+
+package game{
+    Class LOTRGame{
+        -Turns turns
+
+        +LOTRGame()
+        +void createArmies()
+        +void execute()
+
+    }
+    Class Armies{
+
+        +Armies()
+        +ArrayList<Character> createArmie()
+        +void getArmies()
+    }
+
+    Class Turns{
+        -Armies squadA
+        -Armies squadB
+
+        +startTurns()
+
+    }
+
+    package interfaces{
+
+        interface AttackCalculator{
+            +Attack getInstance()
+
+            +int getAttack()
+            +int calculateFinalDamage()
+
+        }
+
+    }
+
+
+    package gameCharacters{
+
+        Abstract Class Characters{
+            #int armor
+            #String name
+            #int healthPoint
+            #int position
+
+
+            +int getArmor()
+            +String getName()
+            +int getHealthPoint
+            +int getPosition
+
+        }
+
+        package heroes{
+            Class Elves{
+                +final int hateAgainstOrcs
+            }
+
+            Class Hobbits{
+                +final int fearAgainstTrasgos
+            }
+            Class Human{
+
+            }
+
+
+        }
+
+        package beasts{
+
+
+            Class Orcs{
+                +int strengthBonusAgainstAll
+            }
+            Class Trasgos{
+            }
+
+        }
+
+    }
+}
+
+
+
+LOTRGame *-- Turns
+LOTRGame *-- Armies
+
+Turns --> Armies
+
+Armies *-- Characters
+
+Characters .up.> Attack
+
+Characters <|-- Elves
+Characters <|-- Hobbits
+Characters <|-- Human
+
+Characters <|-- Orcs
+Characters <|-- Trasgos
+
+
+
+@enduml
