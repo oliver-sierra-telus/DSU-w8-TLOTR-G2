@@ -13,14 +13,15 @@ public class Elves extends Characters{
 
     @Override
     public int getAtack() {
-        // TODO Auto-generated method stub
-        return 0;
+        int attack1 = super.getRandomAttack(100);
+        int attack2 = super.getRandomAttack(100);
+        int maxAttack = Math.max(attack1, attack2);
+        return maxAttack;
     }
 
     @Override
-    public void defend(int damage) {
-        // TODO Auto-generated method stub
-        
+    public void defend(int damageAgainst) {
+        healthPoints-=damageAgainst;
     }
     
 }

@@ -4,7 +4,7 @@ import com.lotrgamev2.app.game.gameCharacters.Characters;
 
 public class Orcs extends Characters{
 
-    public double strenghtBonusAgaintsAll = 0.10;
+    public double strenghtBonusAgaintsAll = 1.10;
 
     @Override
     public int calculatorFinalDamage() {
@@ -14,14 +14,13 @@ public class Orcs extends Characters{
 
     @Override
     public int getAtack() {
-        // TODO Auto-generated method stub
-        return 0;
+        int attack = super.getRandomAttack(90);
+        return (int)(attack*strenghtBonusAgaintsAll);
     }
 
     @Override
-    public void defend(int damage) {
-        // TODO Auto-generated method stub
-        
+    public void defend(int damageAgainst) {
+        healthPoints-=damageAgainst;
     }
     
 }

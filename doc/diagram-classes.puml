@@ -16,7 +16,7 @@ package game{
         -ArrayList<Character> squadB
 
         +Armies()
-        +ArrayList<Character> createArmie()
+        +void createArmie()
         +void fight()
     }
 

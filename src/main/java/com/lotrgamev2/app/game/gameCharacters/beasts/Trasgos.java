@@ -12,14 +12,13 @@ public class Trasgos extends Characters {
 
     @Override
     public int getAtack() {
-        // TODO Auto-generated method stub
-        return 0;
+        int attack = super.getRandomAttack(90);
+        return attack;
     }
 
     @Override
-    public void defend(int damage) {
-        // TODO Auto-generated method stub
-        
+    public void defend(int damageAgainst) {
+        healthPoints-=damageAgainst;
     }
     
 }
