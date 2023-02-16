@@ -1,14 +1,16 @@
 package com.lotrgamev2.app.game;
 
-import java.util.ArrayList;
-
-import com.lotrgamev2.app.game.gameCharacters.Characters;
 
 public class Turns {
+    private Armies armies;
 
     public void startTurns(){
+        armies = new Armies();
+
+        while(armies.getSquadA().size() > 0 ||armies.getSquadB().size() > 0){
+            armies.fight();
+        }
+
 
     }
-
-    
 }

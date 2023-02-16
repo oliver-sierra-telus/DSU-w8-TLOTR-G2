@@ -16,5 +16,11 @@ public class Elves extends Characters{
         // TODO Auto-generated method stub
         return 0;
     }
+
+    @Override
+    public void defend(int damage) {
+        // TODO Auto-generated method stub
+        
+    }
     
 }

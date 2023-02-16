@@ -18,5 +18,12 @@ public class Armies {
         
     }
 
+    public ArrayList<Characters> getSquadA() {
+        return squadA;
+    }
+
+    public ArrayList<Characters> getSquadB() {
+        return squadB;
+    }
 
 }

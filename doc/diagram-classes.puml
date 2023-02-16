@@ -13,8 +13,8 @@ package game{
 
     }
     Class Armies{
-        -Armies squadA
-        -Armies squadB
+        -ArrayList<Character> squadA
+        -ArrayList<Character> squadB
 
         +Armies()
         +ArrayList<Character> createArmie()
@@ -22,7 +22,7 @@ package game{
     }
 
     Class Turns{
-        
+        -Armies armies
 
         +startTurns()
 
@@ -48,7 +48,7 @@ package game{
             #String name
             #int healthPoint
 
-
+            +int randomPower(int limit)
             +int getArmor()
             +String getName()
             +int getHealthPoint()
