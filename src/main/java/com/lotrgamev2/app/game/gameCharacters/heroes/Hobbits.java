@@ -6,23 +6,29 @@ public class Hobbits extends Characters{
 
     public final int fearAgainstTrasgos = 5;
 
+
     @Override
-    public int calculatorFinalDamage() {
-        // TODO Auto-generated method stub
-        return 0;
+    public int getAtack(int initialAttack, String enemy) {
+        if(enemy.equalsIgnoreCase("TRASGOS")){
+            return initialAttack - fearAgainstTrasgos;
+        }
+        else {
+            return initialAttack;
+        }
     }
 
     @Override
-    public int getAtack() {
-        int attack1 = super.getRandomAttack(100);
-        int attack2 = super.getRandomAttack(100);
-        int maxAttack = Math.max(attack1, attack2);
-        return maxAttack;
-    }
-
-    @Override
-    public void defend(int damageAgainst) {
-        healthPoints-=damageAgainst;
+    public void defend(int damageAgainst, String enemy) {
+        int auxArmor = armor;
+        if(enemy.equalsIgnoreCase("ORCS")){
+            auxArmor = (int)(armor * 0.90);
+        }
+        if(auxArmor >= damageAgainst){
+            System.out.println("EL ATAQUE HACIA " + name + "FALLO ");
+        }else{
+            System.out.println(name + " RECIBIO " + damageAgainst +" DE DAÑO");
+            healthPoints-=damageAgainst;
+        }
     }
     
 }

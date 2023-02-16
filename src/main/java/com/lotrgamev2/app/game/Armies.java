@@ -18,26 +18,21 @@ public class Armies {
     public void fight(){
         Scanner in = new Scanner(System.in);
         int roundsToFight = Math.min(squadA.size(), squadB.size());
-        separator();
-        System.out.println("|       Nueva oleada de ataques comienza...    |");
-        System.out.println("|        Los batallones a enfrentarse son:     |");
-        separator();
-        System.out.println("Batallon de heroes :" + squadA.toString());
-        System.out.println("Batallon de Bestias:" + squadB.toString());
-        separator();
-        System.out.println();
+        showAttackWaveText();
 
         for (int i = 0; i < roundsToFight; i++) {
             Characters hero = squadA.get(i);
             Characters beast = squadB.get(i);
+            int heroAttack;
+            int beastAttack;
 
 
             showRoundText(i);
             System.out.println(" Los personajes a enfrentar son: " + hero.getName() 
             + " VS " + beast.getName());
 
-            System.out.println(hero.getName() + " tiene " + hero.getName() );
-
+            System.out.println(hero.getName() + " tiene " + hero.getHealthPoints() +" hp" );
+            System.out.println(beast.getName() + " tiene " + beast.getHealthPoints() +" hp" );
             
 
 
@@ -45,8 +40,11 @@ public class Armies {
 
 
 
+            System.out.println(hero.getName() + " ATACA ");
+
             in.nextLine();
         }
+        deleteDeadCharacters();
 
     }
 
@@ -72,6 +70,21 @@ public class Armies {
 
     public void separator(){
         System.out.println("------------------------------------------------");
+    }
+
+    public void showAttackWaveText(){
+        separator();
+        System.out.println("|       Nueva oleada de ataques comienza...    |");
+        System.out.println("|        Los batallones a enfrentarse son:     |");
+        separator();
+        System.out.println("Batallon de heroes :" + squadA.toString());
+        System.out.println("Batallon de Bestias:" + squadB.toString());
+        separator();
+        System.out.println();
+    }
+
+    public int throwDice(int diceTimes, int limit){
+        return ((int) (Math.random() * limit + 1));
     }
 
 }

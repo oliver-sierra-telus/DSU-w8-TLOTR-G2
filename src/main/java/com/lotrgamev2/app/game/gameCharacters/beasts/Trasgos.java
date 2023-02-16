@@ -5,20 +5,18 @@ import com.lotrgamev2.app.game.gameCharacters.Characters;
 public class Trasgos extends Characters {
 
     @Override
-    public int calculatorFinalDamage() {
-        // TODO Auto-generated method stub
-        return 0;
+    public int getAtack(int initialAttack, String enemy) {
+        return initialAttack;
     }
 
     @Override
-    public int getAtack() {
-        int attack = super.getRandomAttack(90);
-        return attack;
-    }
-
-    @Override
-    public void defend(int damageAgainst) {
-        healthPoints-=damageAgainst;
+    public void defend(int damageAgainst, String enemy) {
+        if(armor >= damageAgainst){
+            System.out.println("EL ATAQUE HACIA " + name + "FALLO ");
+        }else{
+            System.out.println(name + " RECIBIO " + damageAgainst +" DE DAÑO");
+            healthPoints-=damageAgainst;
+        }
     }
     
 }

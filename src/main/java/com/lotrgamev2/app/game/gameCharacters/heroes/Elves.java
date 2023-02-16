@@ -6,22 +6,26 @@ public class Elves extends Characters{
     public final int hateAgainstOrcs = 10;
     
     @Override
-    public int calculatorFinalDamage() {
-        // TODO Auto-generated method stub
-        return 0;
+    public int getAtack(int initialAttack, String enemy) {
+        if(enemy.equalsIgnoreCase("ORCS")){
+            return initialAttack + hateAgainstOrcs;
+        }
+        else {
+            return initialAttack;
+        }
     }
 
     @Override
-    public int getAtack() {
-        int attack1 = super.getRandomAttack(100);
-        int attack2 = super.getRandomAttack(100);
-        int maxAttack = Math.max(attack1, attack2);
-        return maxAttack;
+    public void defend(int damageAgainst, String enemy) {
+        int auxArmor = armor;
+        if(enemy.equalsIgnoreCase("ORCS")){
+            auxArmor = (int)(armor * 0.90);
+        }
+        if(auxArmor >= damageAgainst){
+            System.out.println("EL ATAQUE HACIA " + name + "FALLO ");
+        }else{
+            System.out.println(name + " RECIBIO " + damageAgainst +" DE DAÑO");
+            healthPoints-=damageAgainst;
+        }
     }
-
-    @Override
-    public void defend(int damageAgainst) {
-        healthPoints-=damageAgainst;
-    }
-    
 }
