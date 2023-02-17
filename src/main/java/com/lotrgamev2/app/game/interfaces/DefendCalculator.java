@@ -1,5 +1,5 @@
 package com.lotrgamev2.app.game.interfaces;
 
 public interface DefendCalculator {
-    public void defend(int damage, String enemy);
+    public int defend(String character, int damage, String enemy, int armor, int healthP);
 }
