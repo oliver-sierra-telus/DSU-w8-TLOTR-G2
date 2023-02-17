@@ -9,16 +9,15 @@ public class Armies {
     private ArrayList<Characters> squadA;
     private ArrayList<Characters> squadB;
 
-
-    public void createArmies(){
+    public void createArmies() {
         CharacterFactory charFactory = new CharacterFactory();
         int option = 0;
-        int nHumans = 0, nElves= 0, nHobbis= 0, nOrcs= 0, nTrasgos= 0;
+        int nHumans = 0, nElves = 0, nHobbis = 0, nOrcs = 0, nTrasgos = 0;
         squadA = new ArrayList<>();
         squadB = new ArrayList<>();
 
         System.out.println("================SETTING FIGHTERS================");
-        do{
+        do {
             Scanner sc = new Scanner(System.in);
             System.out.println("------------------------------------------------");
             System.out.println("> Which character would you like to create?");
@@ -30,39 +29,38 @@ public class Armies {
             System.out.println("> 6. EXIT MENU");
             System.out.println("================================================");
             option = sc.nextInt();
-
-            switch(option){
-                case 1:{
+            switch (option) {
+                case 1: {
                     System.out.println("How many human would you like to set?");
                     nHumans += sc.nextInt();
                     break;
                 }
-                case 2:{
+                case 2: {
                     System.out.println("How many elves would you like to set?");
                     nElves += sc.nextInt();
                     break;
                 }
-                case 3:{
+                case 3: {
                     System.out.println("How many hobbits would you like to set?");
                     nHobbis += sc.nextInt();
                     break;
                 }
-                case 4:{
+                case 4: {
                     System.out.println("How many orcs would you like to set?");
                     nOrcs += sc.nextInt();
                     break;
                 }
-                case 5:{
+                case 5: {
                     System.out.println("How many trasgos would you like to set?");
                     nTrasgos += sc.nextInt();
                     break;
                 }
-                default:{
+                default: {
                     System.out.println("> Leaving menu fighter...");
                     break;
                 }
             }
-        }while(option != 6);
+        } while (option != 6);
 
         for (int i = 0; i < nElves; i++) {
             squadA.add(charFactory.getNewCharacter("ELVES"));
@@ -80,7 +78,7 @@ public class Armies {
             squadB.add(charFactory.getNewCharacter("TRASGOS"));
         }
         System.out.println("================================================");
-        //TO REMOVE COMMENTS
+        // TO REMOVE COMMENTS
         System.out.println(">Humanos: " + nHumans);
         System.out.println(">Hobbits: " + nHobbis);
         System.out.println(">Elves: " + nElves);
@@ -90,7 +88,7 @@ public class Armies {
         System.out.println(">Size squad b: " + squadB.size());
     }
 
-    public void fight(){
+    public void fight() {
         Scanner in = new Scanner(System.in);
         int roundsToFight = Math.min(squadA.size(), squadB.size());
         showAttackWaveText();
@@ -101,19 +99,12 @@ public class Armies {
             int heroAttack;
             int beastAttack;
 
-
             showRoundText(i);
-            System.out.println(" Los personajes a enfrentar son: " + hero.getName() 
-            + " VS " + beast.getName());
+            System.out.println(" Los personajes a enfrentar son: " + hero.getName()
+                    + " VS " + beast.getName());
 
-            System.out.println(hero.getName() + " tiene " + hero.getHealthPoints() +" hp" );
-            System.out.println(beast.getName() + " tiene " + beast.getHealthPoints() +" hp" );
-            
-
-
-
-
-
+            System.out.println(hero.getName() + " tiene " + hero.getHealthPoints() + " hp");
+            System.out.println(beast.getName() + " tiene " + beast.getHealthPoints() + " hp");
 
             System.out.println(hero.getName() + " ATACA ");
 
@@ -131,23 +122,23 @@ public class Armies {
         return squadB;
     }
 
-    public void deleteDeadCharacters(){
-        squadA.removeIf( (e) -> (e.getHealthPoints()<= 0));
-        squadB.removeIf( (e) -> (e.getHealthPoints()<= 0));
+    public void deleteDeadCharacters() {
+        squadA.removeIf((e) -> (e.getHealthPoints() <= 0));
+        squadB.removeIf((e) -> (e.getHealthPoints() <= 0));
     }
 
-    public void showRoundText(int roundNumber){
+    public void showRoundText(int roundNumber) {
         separator();
-        System.out.println("  |La ronda " + (roundNumber+1 + " va a comenzar: |"));
+        System.out.println("  |La ronda " + (roundNumber + 1 + " va a comenzar: |"));
         separator();
-        
+
     }
 
-    public void separator(){
+    public void separator() {
         System.out.println("------------------------------------------------");
     }
 
-    public void showAttackWaveText(){
+    public void showAttackWaveText() {
         separator();
         System.out.println("|       Nueva oleada de ataques comienza...    |");
         System.out.println("|        Los batallones a enfrentarse son:     |");
@@ -158,7 +149,7 @@ public class Armies {
         System.out.println();
     }
 
-    public int throwDice(int diceTimes, int limit){
+    public int throwDice(int diceTimes, int limit) {
         return ((int) (Math.random() * limit + 1));
     }
 

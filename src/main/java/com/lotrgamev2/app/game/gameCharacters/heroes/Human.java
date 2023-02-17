@@ -3,8 +3,9 @@ package com.lotrgamev2.app.game.gameCharacters.heroes;
 import com.lotrgamev2.app.game.gameCharacters.Characters;
 import com.lotrgamev2.app.game.interfaces.Impl.HeroDefendCalculatorImpl;
 
-public class Human extends Characters{
-    //private HeroDefendCalculatorImpl defend;
+public class Human extends Characters{ 
+    private HeroDefendCalculatorImpl defend;
+    
 
     @Override
     public int getAtack(int initialAttack, String enemy) {
