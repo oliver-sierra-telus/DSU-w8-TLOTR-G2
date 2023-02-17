@@ -7,8 +7,8 @@ public class Orcs extends Characters{
     public Orcs(){
         super();
         this.name = "ORCS";
-        this.armor = (int) (this.healthPoints * 0.15);
         this.healthPoints = 300;
+        this.armor = (int) (this.healthPoints * 0.15);
     }
     
 }

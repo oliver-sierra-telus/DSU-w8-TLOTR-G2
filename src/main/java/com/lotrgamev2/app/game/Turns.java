@@ -5,9 +5,10 @@ public class Turns {
     private Armies armies;
 
     public void startTurns(){
-        armies = new Armies();
+        setArmies();
+        
 
-        while(armies.getSquadA().size() > 0 ||armies.getSquadB().size() > 0){
+        while(!armies.isAnyArmyDefeated()){
             armies.fight();
         }
 
@@ -19,4 +20,12 @@ public class Turns {
 
 
     }
+
+    public void setArmies() {
+        armies = new Armies();
+        armies.createGenericSquads();
+    }
+
+    
+    
 }

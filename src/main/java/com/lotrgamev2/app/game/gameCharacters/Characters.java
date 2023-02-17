@@ -11,15 +11,15 @@ public abstract class Characters{
     Figther figther = new Figther();
 
     public void defend(int damage, String enemy) {
-        this.healthPoints -= figther.defend(this.name, damage, enemy, this.armor, this.healthPoints);
+        this.healthPoints -= figther.defend(this.name, damage, enemy, this.armor);
 
         if (this.healthPoints <= 0) {
             this.healthPoints = 0;
         }
     }
 
-    public int getAtack(int initialAttack, String enemy) {
-        return figther.getAtack(initialAttack, enemy);
+    public int getAtack(String character,int initialAttack, String enemy) {
+        return figther.getAtack(this.name,initialAttack, enemy);
     }
 
 
@@ -39,4 +39,10 @@ public abstract class Characters{
         int attack = (int) (Math.random() * limit + 1);
         return attack;
     }
+
+    @Override
+    public String toString() {
+        return  name ;
+    }
+    
 }

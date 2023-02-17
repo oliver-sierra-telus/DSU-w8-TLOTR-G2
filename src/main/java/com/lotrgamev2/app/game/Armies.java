@@ -96,8 +96,10 @@ public class Armies {
         for (int i = 0; i < roundsToFight; i++) {
             Characters hero = squadA.get(i);
             Characters beast = squadB.get(i);
-            int heroAttack;
-            int beastAttack;
+            int heroBaseAttack  = throwDice(2, 100);
+            int beastBasetAttack = throwDice(1, 90);
+            int heroFinalAttack;
+            int beastFinalAttack;
 
             showRoundText(i);
             System.out.println(" Los personajes a enfrentar son: " + hero.getName()
@@ -106,8 +108,15 @@ public class Armies {
             System.out.println(hero.getName() + " tiene " + hero.getHealthPoints() + " hp");
             System.out.println(beast.getName() + " tiene " + beast.getHealthPoints() + " hp");
 
-            System.out.println(hero.getName() + " ATACA ");
+            heroFinalAttack = hero.getAtack(hero.getName(), heroBaseAttack, beast.getName());
+            beast.defend(heroFinalAttack, hero.getName());
 
+
+
+            beastFinalAttack = beast.getAtack(beast.getName(), beastBasetAttack, hero.getName());
+            hero.defend(beastFinalAttack, beast.getName());
+
+            
             in.nextLine();
         }
         deleteDeadCharacters();
@@ -146,11 +155,45 @@ public class Armies {
         System.out.println("Batallon de heroes :" + squadA.toString());
         System.out.println("Batallon de Bestias:" + squadB.toString());
         separator();
-        System.out.println();
     }
 
     public int throwDice(int diceTimes, int limit) {
-        return ((int) (Math.random() * limit + 1));
+        int damage;
+        if(diceTimes==2){
+            damage = Math.max((int) (Math.random() * limit + 1), (int) (Math.random() * limit + 1));
+        }
+        else{
+            damage = (int) (Math.random() * limit + 1);
+        }
+
+        return damage;
+    }
+
+    
+    public void setSquadA(ArrayList<Characters> squadA) {
+        this.squadA = squadA;
+    }
+
+    public void setSquadB(ArrayList<Characters> squadB) {
+        this.squadB = squadB;
+    }
+
+    public void createGenericSquads() {
+        CharacterFactory factory = new CharacterFactory();
+        squadA = new ArrayList<>();
+        squadB = new ArrayList<>();
+        squadA.add(factory.getNewCharacter("ELVES"));
+        squadA.add(factory.getNewCharacter("HOBBITS"));
+        squadB.add(factory.getNewCharacter("ORCS"));
+        squadB.add(factory.getNewCharacter("TRASGOS"));
+
+    }
+
+    public boolean isAnyArmyDefeated() {
+        if (getSquadA().size() == 0 || getSquadB().size() == 0) {
+            return true;
+        }
+        return false;
     }
 
 }
