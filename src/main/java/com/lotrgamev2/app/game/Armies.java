@@ -79,13 +79,13 @@ public class Armies {
         }
         System.out.println("================================================");
         // TO REMOVE COMMENTS
-        System.out.println(">Humanos: " + nHumans);
-        System.out.println(">Hobbits: " + nHobbis);
-        System.out.println(">Elves: " + nElves);
-        System.out.println(">Orcs: " + nOrcs);
-        System.out.println(">Trasgos: " + nTrasgos);
-        System.out.println(">Size squad a: " + squadA.size());
-        System.out.println(">Size squad b: " + squadB.size());
+        // System.out.println(">Humanos: " + nHumans);
+        // System.out.println(">Hobbits: " + nHobbis);
+        // System.out.println(">Elves: " + nElves);
+        // System.out.println(">Orcs: " + nOrcs);
+        // System.out.println(">Trasgos: " + nTrasgos);
+        // System.out.println(">Size squad a: " + squadA.size());
+        // System.out.println(">Size squad b: " + squadB.size());
     }
 
     public void fight() {
