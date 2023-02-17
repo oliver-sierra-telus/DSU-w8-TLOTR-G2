@@ -29,13 +29,24 @@ package game{
 
     package interfaces{
 
-        interface AttackCalculator{
+        interface Fighter{
             +Attack getInstance()
 
             +int getAttack()
-            +int calculateFinalDamage()
+            +int defend()
 
         }
+
+        interface AttackCalculator{
+            +int getAttack()
+         }
+
+        interface DefendCalculatore{
+            +int defend()
+        }
+
+
+
 
     }
 
@@ -93,7 +104,11 @@ Turns --> Armies
 
 Armies *-- Characters
 
-Characters .up.> AttackCalculator
+Characters .up.> Fighter
+
+Fighter <|.. AttackCalculator
+Fighter <|.. DefendCalculatore
+
 
 Characters <|-- Elves
 Characters <|-- Hobbits
