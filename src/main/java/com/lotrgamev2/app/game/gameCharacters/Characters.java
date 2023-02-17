@@ -14,6 +14,7 @@ public abstract class Characters{
         this.healthPoints -= figther.defend(this.name, damage, enemy, this.armor);
 
         if (this.healthPoints <= 0) {
+            System.out.println(this.name + " HA SIDO VENCIDO");
             this.healthPoints = 0;
         }
     }

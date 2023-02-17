@@ -24,6 +24,7 @@ public class Turns {
     public void setArmies() {
         armies = new Armies();
         armies.createArmies();
+        
         //armies.createGenericSquads();
     }
 

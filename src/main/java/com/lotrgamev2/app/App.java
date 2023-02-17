@@ -14,8 +14,8 @@ public class App
         //System.out.println( "Hello World!" );
         //Armies ar = new Armies();
         //ar.createArmies();
+        //game.createDefaultCharacters();
         LOTRGame game = new LOTRGame();
-        game.createArmies();
         game.execute();
     }
 }

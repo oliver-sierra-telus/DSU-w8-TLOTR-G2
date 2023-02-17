@@ -12,22 +12,21 @@ public class Figther implements AttackCalculator, DefendCalculator {
         if (character.equalsIgnoreCase("HUMAN") || character.equalsIgnoreCase("ELVES")
                 || character.equalsIgnoreCase("HOBBITS")) {
             if (enemy.equalsIgnoreCase("ORCS")) {
-                System.out.println(character+" se reduce su armadura en 10 unidades");
+                System.out.println(character+" its armor is reduced by 10");
                 auxArmor = (int) (armor * 0.90);
             }
             if (auxArmor >= damage) {
-                System.out.println("EL ATAQUE HACIA " + character + " FALLO ");
+                System.out.println("THE ATTACK AGAINS " + character + " FAILED ");
             } else {
                 finalDamage -= auxArmor;
-                System.out.println(character + " RECIBIO " + finalDamage + " DE DAÑO");
+                System.out.println(character + " RECEIVED " + finalDamage + " DAMAGE");
             }
         } else {
             if (auxArmor >= damage) {
-                System.out.println("EL ATAQUE HACIA " + character + " FALLO ");
+                System.out.println("THE ATTACK AGAINS " + character + " FAILED ");
             } else {
                 finalDamage -= auxArmor;
-                System.out.println(character + " RECIBIO " + finalDamage + " DE DAÑO");
-
+                System.out.println(character + " RECEIVED " + finalDamage + " DAMAGE");
             }
         }
         return finalDamage;
@@ -36,10 +35,10 @@ public class Figther implements AttackCalculator, DefendCalculator {
     @Override
     public int getAtack(String character,int initialAttack, String enemy) {
         if (character.equalsIgnoreCase("ELVES") && enemy.equalsIgnoreCase("ORCS")) {
-            System.out.println(character + " obtiene bonus de daño hacia " + enemy);
+            System.out.println(character + " GAINS BONUS ATTACK AGAINS " + enemy);
             return initialAttack + elvesHateAgainstOrcs;
         } else if (character.equalsIgnoreCase("HOBBITS") && enemy.equalsIgnoreCase("TRASGOS")) {
-            System.out.println(character + " se reduce su daño hacia " + enemy);
+            System.out.println(character + " LOSES DAMAGE AGAINST " + enemy);
             return initialAttack - hobbitsFearAgainstTrasgos;
         } else {
             return initialAttack;
