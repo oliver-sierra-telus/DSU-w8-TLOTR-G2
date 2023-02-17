@@ -5,6 +5,7 @@ public class Trasgos extends Characters {
 
     public Trasgos() {
         super();
+        this.name = "TRASGOS";
         this.healthPoints = 325;
         this.armor = (int) (this.healthPoints * 0.15);
     }

@@ -6,6 +6,7 @@ public class Hobbits extends Characters{
 
     public Hobbits() {
         super();
+        this.name = "HOBBITS";
         this.healthPoints = 200;
         this.armor = (int) (this.healthPoints * 0.15);
     }

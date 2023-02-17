@@ -6,6 +6,7 @@ public class Human extends Characters{
 
     public Human() {
         super();
+        this.name = "HUMANS";
         this.healthPoints = 180;
         this.armor = (int) (this.healthPoints * 0.15);
     }
