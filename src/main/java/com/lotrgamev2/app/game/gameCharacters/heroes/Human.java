@@ -4,22 +4,10 @@ import com.lotrgamev2.app.game.gameCharacters.Characters;
 
 public class Human extends Characters{
 
-    @Override
-    public int calculatorFinalDamage() {
-        // TODO Auto-generated method stub
-        return 0;
+    public Human() {
+        super();
+        this.name = "HUMANS";
+        this.healthPoints = 180;
+        this.armor = (int) (this.healthPoints * 0.15);
     }
-
-    @Override
-    public int getAtack() {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public void defend(int damage) {
-        // TODO Auto-generated method stub
-        
-    }
-    
 }

@@ -4,24 +4,10 @@ import com.lotrgamev2.app.game.gameCharacters.Characters;
 
 public class Hobbits extends Characters{
 
-    public final int fearAgainstTrasgos = 5;
-
-    @Override
-    public int calculatorFinalDamage() {
-        // TODO Auto-generated method stub
-        return 0;
+    public Hobbits() {
+        super();
+        this.name = "HOBBITS";
+        this.healthPoints = 200;
+        this.armor = (int) (this.healthPoints * 0.15);
     }
-
-    @Override
-    public int getAtack() {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public void defend(int damage) {
-        // TODO Auto-generated method stub
-        
-    }
-    
 }
